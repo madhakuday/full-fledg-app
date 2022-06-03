@@ -1,0 +1,18 @@
+.dropdown_menu {
+  height: 100%;
+  width: 50%;
+}
+.dropdown_menu ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 5px 6px;
+}
+
+.dropdown_menu ul li {
+  font-size: 1.2rem;
+  padding: 10px 0;
+  height: 100%;
+  width: 100%;
+  color: white;
+}

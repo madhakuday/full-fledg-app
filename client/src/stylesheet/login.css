@@ -1,0 +1,11 @@
+.form_box_1 form label {
+  color: #fff;
+}
+
+.form_box_1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 30px 0;
+}

@@ -1,0 +1,14 @@
+.hero_container {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+    url('https://assets-global.website-files.com/6009ec8cda7f305645c9d91b/6102c0d95c9727a02a32c1b3_17-best-graphic-design-software-tools_BlogHero_V2.jpg');
+
+  background-size: 100% 100%;
+  width: 100%;
+  height: 80vh;
+}
+
+.hero_container_1_box {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}

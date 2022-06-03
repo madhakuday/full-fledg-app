@@ -1,0 +1,33 @@
+ul {
+  display: flex;
+}
+ul li {
+  list-style: none;
+  padding: 0 10px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.header_1_box {
+  box-shadow: rgba(191, 190, 190, 0.25) 0px 30px 60px -12px inset,
+    rgba(212, 208, 208, 0.3) 0px 18px 36px -18px inset;
+  margin: 10px 0;
+}
+.mobile_header {
+  display: none;
+}
+
+.big_screen_menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+@media screen and (max-width: 700px) {
+  .mobile_header {
+    display: block;
+  }
+  .big_screen_menu {
+    display: none;
+  }
+}

@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Source+Code+Pro&family=Tiro+Devanagari+Sanskrit&display=swap');
+
+.scard_box_main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  position: relative;
+  color: white;
+}
+
+.scard_box_1 {
+  height: 100%;
+}
+.scard_box_2 {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.scard_box_2 .scard_abdge {
+  position: absolute;
+  right: 0;
+}
+
+.scard_badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.scard_box_2 ul {
+  padding: 0;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+.scard_box_2 ul li {
+  padding: 10px 0;
+  font-family: 'Tiro Devanagari Sanskrit', serif;
+}
+
+.scard_box_1 img {
+  margin: 10px;
+}
+
+.card_img_box_1 img {
+  display: none;
+}
+@media screen and (max-width: 750px) {
+  .scard_box_main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  .scard_box_1 img {
+    display: none;
+  }
+
+  .card_img_box_1 img {
+    display: block;
+  }
+  .card_img_box_1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card_box_title > Title {
+    font-size: 1rem;
+  }
+}

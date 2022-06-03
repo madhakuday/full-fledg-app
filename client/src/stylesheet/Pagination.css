@@ -1,0 +1,9 @@
+.pagination_main ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination_main ul li {
+  padding: inherit;
+}
