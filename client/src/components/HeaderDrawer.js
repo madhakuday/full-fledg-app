@@ -59,7 +59,7 @@ export default class SwipeableTemporaryDrawer extends React.Component {
                 </li>
                 <li>
                   <Link style={{ color: 'white' }} to="/cripto">
-                    Cripto
+                    crypto
                   </Link>
                 </li>
               </ul>

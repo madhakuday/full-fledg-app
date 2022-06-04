@@ -30,13 +30,10 @@ export class Login extends Component {
           this.setState({ redirect: true });
         }
       })
-      .catch((err) => {
-        console.log('eror', err);
-      });
+      .catch((err) => {});
   }
 
   onFinishFailed(errorInfo) {
-    console.log('Failed:', errorInfo);
     message.error('fullfield all field');
   }
 

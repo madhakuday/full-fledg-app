@@ -24,7 +24,7 @@ export class Header extends Component {
         },
         {
           key: '2',
-          label: <Link to="/cripto">Cripto</Link>,
+          label: <Link to="/cripto">Crypto</Link>,
         },
         {
           key: '3',

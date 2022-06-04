@@ -34,7 +34,6 @@ export class MoviesMain extends Component {
       page: this.state.page,
     });
 
-    console.log('data', data);
     this.setState({
       data: data.results,
       fulldata: data,
@@ -113,6 +112,7 @@ export class MoviesMain extends Component {
                             <img
                               alt="example"
                               src={`${imagelink}/${m.poster_path}`}
+                              loading="lazy"
                             />
                           }
                           actions={[

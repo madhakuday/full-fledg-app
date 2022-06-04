@@ -76,12 +76,14 @@ export class Singelcard extends Component {
                       height="100%"
                       style={{ borderRadius: '15px' }}
                       className="card_img"
+                      loading="lazy"
                     />
                     <Box className="card_img_box_1">
                       <img
                         src={`${imagelink}${x.poster_path}`}
                         height="60%"
                         width="60%"
+                        loading="lazy"
                       />
                     </Box>
                   </Box>

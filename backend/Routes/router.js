@@ -6,7 +6,6 @@ import axios from 'axios';
 ///schema
 
 import userdata from '../schema/Schema.js';
-import { log } from 'console';
 
 const router = express.Router();
 

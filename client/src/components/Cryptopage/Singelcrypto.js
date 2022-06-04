@@ -39,7 +39,7 @@ export class Singelcrypto extends Component {
               <React.Fragment key={x.id}>
                 <Box className="ccard_box_main">
                   <Box className="ccard_box_1">
-                    <img src={x.image} className="ccars_img_1" />
+                    <img src={x.image} className="ccars_img_1" loading="lazy" />
 
                     <Box className="ccard_box_typo">
                       <Title
