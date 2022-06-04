@@ -20,11 +20,7 @@ export class Header extends Component {
       items={[
         {
           key: '1',
-          label: (
-            <Link to="/movies" target="_blank" rel="noopener noreferrer">
-              Movies
-            </Link>
-          ),
+          label: <Link to="/movies">Movies</Link>,
         },
         {
           key: '2',
