@@ -28,7 +28,6 @@ export default class MovieMenubar extends Component {
           value={this.state.value}
           onChange={(event, newValue) => {
             this.setState({ value: newValue });
-            console.log(this.state.value);
           }}
         >
           <BottomNavigationAction

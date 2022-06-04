@@ -29,9 +29,9 @@ export class Singelcard extends Component {
   async fetchmovedata() {
     const { id, page } = this.props.match.params;
 
-    const { data } = await axios.get(
-      `https://api.themoviedb.org/3/trending/all/day?api_key=96eb55edd584f0e95c33280b79b8468b&page=${page}`
-    );
+    const { data } = await axios.post('/api/singmovieapi', {
+      page: page,
+    });
 
     this.setState({ data: data.results });
 
@@ -45,9 +45,12 @@ export class Singelcard extends Component {
   async fetchvideo() {
     const { id, page } = this.props.match.params;
 
-    const { data } = await axios.get(
-      `https://api.themoviedb.org/3/${this.state.media_type}/${id}/videos?api_key=96eb55edd584f0e95c33280b79b8468b&page=${page}`
-    );
+    const { data } = await axios.post('/api/singmovievideoapi', {
+      id: id,
+      page: page,
+      media_type: this.state.media_type,
+    });
+
     this.setState({ videolink: data.results[0].key });
   }
 
@@ -55,7 +58,7 @@ export class Singelcard extends Component {
     this.fetchmovedata();
     setTimeout(() => {
       this.fetchvideo();
-    }, 100);
+    }, 500);
   }
 
   render() {

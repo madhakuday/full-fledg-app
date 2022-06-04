@@ -45,7 +45,9 @@ export class Header extends Component {
   componentDidMount() {
     const getlocaldata = localStorage.getItem('registerdata');
 
-    if (getlocaldata) {
+    if (getlocaldata === 'undefined' || getlocaldata === null) {
+      this.setState({ isLogedin: false });
+    } else {
       this.setState({ isLogedin: true });
     }
   }

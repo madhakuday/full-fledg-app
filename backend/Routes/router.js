@@ -1,10 +1,12 @@
 import express from 'express';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
+import axios from 'axios';
 
 ///schema
 
 import userdata from '../schema/Schema.js';
+import { log } from 'console';
 
 const router = express.Router();
 
@@ -55,8 +57,60 @@ router.post('/loginuser', async (req, res) => {
       res.status(404).send({ message: 'invalid data' });
     }
   } catch (error) {
+    res.status(404).send({ Error: 'email password does not match' });
+  }
+});
+
+router.get('/cryptoapi', async (req, res) => {
+  try {
+    const data = await axios.get(
+      'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=true'
+    );
+
+    res.send(data.data);
+  } catch (error) {
     res.status(404).send({ Error: error.message });
-    console.log('error in login api', { Errorinlogin: error.message });
+  }
+});
+
+router.post('/movieapi', async (req, res) => {
+  try {
+    const { type, page } = req.body;
+
+    const api = `https://api.themoviedb.org/3/trending/${type}/day?api_key=96eb55edd584f0e95c33280b79b8468b&page=${page}`;
+
+    const data = await axios.get(api);
+    res.send(data.data);
+  } catch (error) {
+    res.status(404).send({ Error: error.message });
+  }
+});
+
+router.post('/singmovieapi', async (req, res) => {
+  try {
+    const { page } = req.body;
+
+    const api = `https://api.themoviedb.org/3/trending/all/day?api_key=96eb55edd584f0e95c33280b79b8468b&page=${page}`;
+
+    const data = await axios.get(api);
+
+    res.send(data.data);
+  } catch (error) {
+    res.status(404).send({ Error: error.message });
+  }
+});
+
+router.post('/singmovievideoapi', async (req, res) => {
+  try {
+    const { page, media_type, id } = req.body;
+
+    const api = `https://api.themoviedb.org/3/${media_type}/${id}/videos?api_key=96eb55edd584f0e95c33280b79b8468b&page=${page}`;
+
+    const data = await axios.get(api);
+
+    res.send(data.data);
+  } catch (error) {
+    res.status(404).send({ Error: error.message });
   }
 });
 

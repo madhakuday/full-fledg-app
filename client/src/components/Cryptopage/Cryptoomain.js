@@ -1,7 +1,7 @@
 import { Container } from '@mui/material';
-import React, { useState, useEffect, Component } from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
-import { List, message, Avatar, Divider, Input, Typography } from 'antd';
+import { List, Avatar, Divider, Input, Typography } from 'antd';
 
 //Component
 import Header from '../Header';
@@ -26,7 +26,8 @@ export class Criptomain extends Component {
   appendData = async () => {
     const api =
       'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=true';
-    const data = await axios.get(api);
+    // const data = await axios.get(api);
+    const data = await axios.get('/api/cryptoapi');
 
     this.setState({ data: data.data });
   };

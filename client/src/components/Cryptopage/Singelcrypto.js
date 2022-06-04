@@ -22,15 +22,10 @@ export class Singelcrypto extends Component {
   async componentDidMount() {
     const { id } = this.props.match.params;
 
-    const api =
-      'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=true';
-
-    const data = await axios.get(api);
-
+    const data = await axios.get('/api/cryptoapi');
     const test = data.data.filter((x) => {
       return x.id.toString() === id;
     });
-    console.log(test);
 
     this.setState({ data: test });
   }

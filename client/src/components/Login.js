@@ -14,21 +14,25 @@ export class Login extends Component {
     };
     this.onFinish = this.onFinish.bind(this);
   }
-  async onFinish(values) {
+  onFinish(values) {
     const { username, email, password } = values;
 
-    const result = await axios.post('/api/loginuser', {
-      username,
-      email,
-      password,
-    });
-
-    if (result.status === 200) {
-      message.success('Done');
-
-      const locdata = localStorage.setItem('registerdata', result.data.token);
-      this.setState({ redirect: true });
-    }
+    const result = axios
+      .post('/api/loginuser', {
+        username,
+        email,
+        password,
+      })
+      .then((data) => {
+        if (data.status === 200) {
+          message.success('Done');
+          const locdata = localStorage.setItem('registerdata', data.data.token);
+          this.setState({ redirect: true });
+        }
+      })
+      .catch((err) => {
+        console.log('eror', err);
+      });
   }
 
   onFinishFailed(errorInfo) {
@@ -47,6 +51,7 @@ export class Login extends Component {
     if (redirect) {
       return <Redirect to="/" />;
     }
+
     return (
       <>
         <Container>

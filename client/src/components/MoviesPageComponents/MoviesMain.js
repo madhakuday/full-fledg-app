@@ -29,12 +29,12 @@ export class MoviesMain extends Component {
   }
 
   async getmoviesdata() {
-    const { data } = await axios.get(
-      `https://api.themoviedb.org/3/trending/${this.state.type}/day?api_key=96eb55edd584f0e95c33280b79b8468b&page=${this.state.page}`
-    );
+    const { data } = await axios.post('/api/movieapi', {
+      type: this.state.type,
+      page: this.state.page,
+    });
 
-    console.log('data is ', data);
-
+    console.log('data', data);
     this.setState({
       data: data.results,
       fulldata: data,
@@ -54,13 +54,11 @@ export class MoviesMain extends Component {
 
     setTimeout(() => {
       const test = this.state.data.map((x) => x.video);
-      console.log('video is', test);
     }, 1000);
   }
 
   getvalue(val) {
     this.setState({ type: val }, () => {
-      console.log('type is', this.state.type);
       this.getmoviesdata();
     });
   }
