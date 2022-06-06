@@ -11,7 +11,6 @@ import { Link } from 'react-router-dom';
 //const
 
 const { Meta } = Card;
-const imagelink = 'https://image.tmdb.org/t/p/w300';
 
 export class MoviesMain extends Component {
   constructor() {
@@ -47,6 +46,11 @@ export class MoviesMain extends Component {
     });
   }
 
+  getvalue(val) {
+    this.setState({ type: val }, () => {
+      this.getmoviesdata();
+    });
+  }
   componentDidMount() {
     this.getmoviesdata();
     this.setState({ cardloding: false });
@@ -54,12 +58,6 @@ export class MoviesMain extends Component {
     setTimeout(() => {
       const test = this.state.data.map((x) => x.video);
     }, 1000);
-  }
-
-  getvalue(val) {
-    this.setState({ type: val }, () => {
-      this.getmoviesdata();
-    });
   }
   render() {
     return (
@@ -99,7 +97,6 @@ export class MoviesMain extends Component {
                 return (
                   <React.Fragment key={ind}>
                     <Link to={`/scard/${this.state.page}/${m.id}`}>
-                      {/* <Box> */}
                       <Col span={8}>
                         <Card
                           hoverable={true}
@@ -111,7 +108,7 @@ export class MoviesMain extends Component {
                           cover={
                             <img
                               alt="example"
-                              src={`${imagelink}/${m.poster_path}`}
+                              src={`https://image.tmdb.org/t/p/w300/${m.poster_path}`}
                               loading="lazy"
                             />
                           }
@@ -138,7 +135,6 @@ export class MoviesMain extends Component {
                           />
                         </Card>
                       </Col>
-                      {/* </Box> */}
                     </Link>
                   </React.Fragment>
                 );

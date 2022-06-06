@@ -29,6 +29,7 @@ export class Singelcrypto extends Component {
 
     this.setState({ data: test });
   }
+
   render() {
     return (
       <>

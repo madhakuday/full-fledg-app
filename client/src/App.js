@@ -13,8 +13,6 @@ import Cryptoomain from './components/Cryptopage/Cryptoomain';
 import Singelcrypto from './components/Cryptopage/Singelcrypto';
 import Register from './components/Register';
 
-import { Redirect } from 'react-router';
-
 export class App extends Component {
   constructor(props) {
     super(props);

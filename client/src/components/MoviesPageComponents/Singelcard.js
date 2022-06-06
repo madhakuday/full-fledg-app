@@ -9,7 +9,6 @@ import Header from '../Header';
 //css
 import '../../stylesheet/Singelcard.css';
 import { Badge, Button, Typography } from 'antd';
-import { Link } from 'react-router-dom';
 
 const { Title } = Typography;
 
@@ -24,6 +23,12 @@ export class Singelcard extends Component {
       media_type: '',
       videolink: '',
     };
+  }
+  componentDidMount() {
+    this.fetchmovedata();
+    setTimeout(() => {
+      this.fetchvideo();
+    }, 500);
   }
 
   async fetchmovedata() {
@@ -52,13 +57,6 @@ export class Singelcard extends Component {
     });
 
     this.setState({ videolink: data.results[0].key });
-  }
-
-  componentDidMount() {
-    this.fetchmovedata();
-    setTimeout(() => {
-      this.fetchvideo();
-    }, 500);
   }
 
   render() {

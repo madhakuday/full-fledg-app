@@ -15,9 +15,6 @@ export default class MovieMenubar extends Component {
   }
 
   filterhendler(val) {
-    // const updateval = this.props.data.filter((x) => {
-    //   return x.media_type === val;
-    // });
     return this.props.getvalue(val);
   }
   render() {

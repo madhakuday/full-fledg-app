@@ -21,12 +21,13 @@ export class Criptomain extends Component {
     };
   }
 
+  componentDidMount() {
+    this.appendData();
+  }
+
   ContainerHeight = 800;
 
   appendData = async () => {
-    const api =
-      'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=true';
-    // const data = await axios.get(api);
     const data = await axios.get('/api/cryptoapi');
 
     this.setState({ data: data.data });
@@ -41,9 +42,6 @@ export class Criptomain extends Component {
     }
   };
 
-  componentDidMount() {
-    this.appendData();
-  }
   hendelchange(e) {
     this.setState({ filter: e });
   }
