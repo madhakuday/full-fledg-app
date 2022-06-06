@@ -21,10 +21,6 @@ export class Criptomain extends Component {
     };
   }
 
-  componentDidMount() {
-    this.appendData();
-  }
-
   ContainerHeight = 800;
 
   appendData = async () => {
@@ -44,6 +40,10 @@ export class Criptomain extends Component {
 
   hendelchange(e) {
     this.setState({ filter: e });
+  }
+
+  componentDidMount() {
+    this.appendData();
   }
 
   render() {
